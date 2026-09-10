@@ -610,4 +610,20 @@
     </div>
 </main>
 
+<?php do_action('my_hook'); ?>
+
+<?php do_action('my_greeting', 'day', 'Steve'); ?>
+
+<?php do_action('my_greeting', 'morning', 'John Apple'); ?>
+
+<p>
+    <?= apply_filters('my_hello', 'Adam Adams'); ?>
+</p>
+<p>
+    <?= apply_filters('my_goodbye', 'John Apple'); ?>
+</p>
+<p>
+    <?= apply_filters('some_nonexisting_filter', 'Params for nonexisting filter') ?>
+</p>
+
 <?php get_footer(); ?>
