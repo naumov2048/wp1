@@ -41,14 +41,20 @@
                             <div class="header__contacts-item">
                                 <img src="<?= get_template_directory_uri() ?>/assets/img/icons/svg/phone.svg" alt="телефон" class="header__contacts-logo">
                                 <div class="header__contacts-tel">
-                                    <a href="tel:+38098">+38098</a>
-                                    <a href="tel:+38099">+38099</a>
+                                    <?php
+                                        foreach (get_field('contact_phones') as $i => $phone) {
+                                    ?>
+                                        <a href="tel:<?= $phone["phone"] ?>"><?= $phone["phone"] ?></a>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div class="header__contacts-item">
                                 <img src="<?= get_template_directory_uri() ?>/assets/img/icons/svg/pointer.svg" alt="указатель" class="header__contacts-logo">
-                                <address>ул. Василисы Кожиной, 1<br>
-                                    Москва, Россия, 121096</address>
+                                <address>
+                                    <?= get_field('contact_address') ?>
+                                </address>
                             </div>
                         </div>
                     </div>
