@@ -42,7 +42,7 @@
                                 <img src="<?= get_template_directory_uri() ?>/assets/img/icons/svg/phone.svg" alt="телефон" class="header__contacts-logo">
                                 <div class="header__contacts-tel">
                                     <?php
-                                        foreach (get_field('contact_phones') as $i => $phone) {
+                                        foreach (get_field_from_mainpage('contact_phones') as $i => $phone) {
                                     ?>
                                         <a href="tel:<?= $phone["phone"] ?>"><?= $phone["phone"] ?></a>
                                     <?php
@@ -53,7 +53,7 @@
                             <div class="header__contacts-item">
                                 <img src="<?= get_template_directory_uri() ?>/assets/img/icons/svg/pointer.svg" alt="указатель" class="header__contacts-logo">
                                 <address>
-                                    <?= get_field('contact_address') ?>
+                                    <?= get_field_from_mainpage('contact_address') ?>
                                 </address>
                             </div>
                         </div>

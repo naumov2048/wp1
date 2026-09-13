@@ -46,4 +46,9 @@ function make_hello($name) {
 add_filter('my_hello', 'make_hello', 10);
 add_filter('my_hello', 'make_hello', 11);
 
+function get_field_from_mainpage($selector, $post_id = false, $format_value = true, $escape_html = false) {
+    $mainpage_id = 2;
+    return get_field($selector, $mainpage_id, $format_value, $escape_html);
+}
+
 ?>
