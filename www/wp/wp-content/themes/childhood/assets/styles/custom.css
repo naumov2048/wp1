@@ -5,3 +5,14 @@
 .toys__item-info-my {
     width: 100%;
 }
+
+.wpcf7 form .wpcf7-not-valid-tip.wpcf7-not-valid-tip {
+    margin-top: 4px;
+}
+
+.wpcf7 form .wpcf7-response-output.wpcf7-response-output {
+    margin: 16px 0px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 90%;
+}
