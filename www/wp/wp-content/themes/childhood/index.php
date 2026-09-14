@@ -105,7 +105,7 @@
                     ]);
                     foreach ($posts_soft_toys as $i => $item) :
                 ?>
-                    <div class="toys__item" style="background-image: url('<?= get_field('toy_image', $item->ID)["url"] ?>')">
+                    <div class="toys__item" style="background-image: url('<?= get_post_thumbnail_url($item->ID, 'medium') ?>')">
                         <div class="toys__item-info toys__item-info-my">
                             <div class="toys__item-title">
                                 <?= $item->post_title; ?>
@@ -134,7 +134,7 @@
                     ]);
                     foreach ($posts_learning_toys as $i => $item) :
                 ?>
-                    <div class="toys__item" style="background-image: url('<?= get_field('toy_image', $item->ID)["url"] ?>')">
+                    <div class="toys__item" style="background-image: url('<?= get_post_thumbnail_url($item->ID, 'medium') ?>')">
                         <div class="toys__item-info toys__item-info-my">
                             <div class="toys__item-title">
                                 <?= $item->post_title; ?>
@@ -334,32 +334,24 @@
                     <div class="feedslider glide">
                         <div class="glide__track" data-glide-el="track">
                             <ul class="glide__slides">
-                                <li class="glide__slide">
-                                    <div class="feedslider__title">
-                                        Иванов Игорь
-                                    </div>
-                                    <div class="feedslider__text">
-                                        Спасибо огромное за вежливость и терпение. Обратился к вам только с идеей для подарка, а вы развили её до полноценного проекта! Так что мой сын теперь круглые сутки играет с железной дорогой, построенной по его планам)
-                                        <br><br>
-                                        Отдельное спасибо менеджеру Маргарите за терпение и стойкость!
-                                    </div>
-                                </li>
-                                <li class="glide__slide">
-                                    <div class="feedslider__title">
-                                        Черкессов Алексей Дмитриевич
-                                    </div>
-                                    <div class="feedslider__text">
-                                        Заказывал у ребят целую партию игрушек для детского сада. Новый год прошел на ура! Теперь все детишки счастливы и не расстаются со своими подарками, а самые хитрые спрашивают когда следующие праздники)
-                                    </div>
-                                </li>
-                                <li class="glide__slide">
-                                    <div class="feedslider__title">
-                                        Анна Сергеевна
-                                    </div>
-                                    <div class="feedslider__text">
-                                        Решила к дню рождения своей малышки заказать подарки здесь. И ни сколько не жалею! Мишка именно такой, как я хотела, прямо как у меня в детстве: мягкий, приятный на ощупь и оочень милый. Сразу видно, что ручная работа.
-                                    </div>
-                                </li>
+                                <?php
+                                    $posts_feedbacks = get_posts([
+                                        'numberposts' => 6,
+                                        'category_name' => 'feedbacks',
+                                        'post_status' => 'publish',
+                                        'order' => 'ASC'
+                                    ]);
+                                    foreach ($posts_feedbacks as $i => $item) :
+                                ?>
+                                    <li class="glide__slide">
+                                        <div class="feedslider__title">
+                                            <?= get_field('feedback_author', $item->ID) ?>
+                                        </div>
+                                        <div class="feedslider__text">
+                                            <?= get_field('feedback_text', $item->ID) ?>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
 

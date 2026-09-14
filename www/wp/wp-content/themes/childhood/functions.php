@@ -2,6 +2,7 @@
 
 function my_theme_setup() {
     add_theme_support( 'custom-logo' );
+    add_theme_support( 'post-thumbnails' );
 }
 
 add_action( 'after_setup_theme', 'my_theme_setup' );
@@ -49,6 +50,15 @@ add_filter('my_hello', 'make_hello', 11);
 function get_field_from_mainpage($selector, $post_id = false, $format_value = true, $escape_html = false) {
     $mainpage_id = 2;
     return get_field($selector, $mainpage_id, $format_value, $escape_html);
+}
+
+function get_post_thumbnail_url($post_id, $size) {
+    $thumb_id = get_post_thumbnail_id($post_id);
+    if ($thumb_id) {
+        return wp_get_attachment_image_url($thumb_id, $size);
+    } else {
+        return get_template_directory_uri() . '/assets/img/not-found.jpg';
+    }
 }
 
 ?>

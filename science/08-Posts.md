@@ -76,3 +76,8 @@ Can be downloaded [here](https://wordpress.org/plugins/cyr2lat/)
 ```
 
 13. Do the same actions for category learning_toys. After this, we should have sliders, soft toys and learning toys dynamically displayed from posts in our database.
+
+14. Homework of lesson 11: do dynamic display of feedbacks on main page using posts.
+Fields:
+    - feedback_author text
+    - feedback_text textarea
