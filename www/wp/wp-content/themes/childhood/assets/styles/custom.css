@@ -1,3 +1,7 @@
 .row-alternating:nth-child(2n+1) {
     flex-direction: row-reverse;
 }
+
+.toys__item-info-my {
+    width: 100%;
+}
