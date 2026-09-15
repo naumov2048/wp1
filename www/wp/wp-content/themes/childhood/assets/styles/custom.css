@@ -6,6 +6,11 @@
     width: 100%;
 }
 
+.toys .title {
+    text-align: center;
+    margin: 40px auto;
+}
+
 .wpcf7 form .wpcf7-not-valid-tip.wpcf7-not-valid-tip {
     margin-top: 4px;
 }
