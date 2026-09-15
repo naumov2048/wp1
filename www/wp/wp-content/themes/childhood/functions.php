@@ -3,6 +3,7 @@
 function my_theme_setup() {
     add_theme_support( 'custom-logo' );
     add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'menus' );
 }
 
 add_action( 'after_setup_theme', 'my_theme_setup' );
@@ -59,6 +60,17 @@ function get_post_thumbnail_url($post_id, $size) {
     } else {
         return get_template_directory_uri() . '/assets/img/not-found.jpg';
     }
+}
+
+add_filter('nav_menu_link_attributes' , 'filter_link_attributes' , 10 , 3);
+function filter_link_attributes($attrs, $item, $args) {
+    if ($args->menu == 'Main') {
+        $attrs['class'] = ' header__nav-item ';
+        if ($item->current) {
+            $attrs['class'] .= ' header__nav-item-active ';
+        }
+    }
+    return $attrs;
 }
 
 ?>
