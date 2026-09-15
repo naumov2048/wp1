@@ -34,9 +34,9 @@ Template Name: Page-Toys
                                 <?= get_field('toy_description', $item->ID) ?>                            
                             </div>
                             <?php if (get_field('toy_button_enabled', $item->ID)) : ?>
-                                <div class="minibutton toys__trigger">
-                                    <?= get_field('toy_button_text', $item->ID) ?>
-                                </div>
+                                <a href="<?= get_permalink($item) ?>" class="minibutton toys__trigger">
+                                    Подробнее    
+                                </a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -63,9 +63,9 @@ Template Name: Page-Toys
                                 <?= get_field('toy_description', $item->ID) ?>                            
                             </div>
                             <?php if (get_field('toy_button_enabled', $item->ID)) : ?>
-                                <div class="minibutton toys__trigger">
-                                    <?= get_field('toy_button_text', $item->ID) ?>
-                                </div>
+                                <a href="<?= get_permalink($item) ?>" class="minibutton toys__trigger">
+                                    Подробнее    
+                                </a>
                             <?php endif; ?>
                         </div>
                     </div>
